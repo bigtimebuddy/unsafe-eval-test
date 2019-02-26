@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Unsafe-Eval Test</title>
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://pixijs.download">
+    </head>
+    <body>
+        <h1>Unsafe-Eval Test</h1>
+        <canvas id="stage"></canvas>
+        <div id="output"></div>
+        <script src="https://pixijs.download/dev-new-function-fallback/pixi.js"></script>
+        <script src="https://pixijs.download/dev-new-function-fallback/unsafe-eval.js"></script>
+        <script>
+
+        const app = new PIXI.Application(800, 800, {
+            backgroundColor: 0x999999,
+            antialias: true,
+          view: document.getElementById('stage')
+        });
+
+        const curves = new PIXI.Graphics()
+            .lineStyle(10, 0x0)
+            .moveTo(0, 50)
+            .bezierCurveTo(200, 200, 200, 600, 400, 0);
+
+        curves.scale.set(2);
+
+        app.stage.addChild(curves);
+        </script>
+    </body>
+</html>
