@@ -11,10 +11,12 @@
         <script src="https://pixijs.download/fix-unsafe-eval-check/packages/unsafe-eval.js"></script>
         <script>
 
-        const app = new PIXI.Application(800, 800, {
+        const app = new PIXI.Application({
+            width: 800,
+            height: 800,
             backgroundColor: 0x999999,
             antialias: true,
-          view: document.getElementById('stage')
+            view: document.getElementById('stage')
         });
 
         const curves = new PIXI.Graphics()
